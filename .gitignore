@@ -1,0 +1,4 @@
+testinghw3_2/resources/**
+testinghw3_2/target/**
+.vscode/
+.DS_Store
