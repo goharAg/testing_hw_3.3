@@ -6,18 +6,22 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;  
-import org.testng.annotations.Test;  
+import org.testng.annotations.Test;
+
+import main.java.com.aua.testinghw.pages.ShutterStockSearchPage;  
 
 
 
 public class ShutterStockSearchPageTest extends BaseTest
 {
+    ShutterStockSearchPage searchPage;
 
     @Test
-    public void WebDriverTest(){
-        String title = driver.getTitle();
-        System.out.println(title);
-        driver.findElement(By.className("mui-1pucve2-select"));
-
+    public void searchTextTest(){
+        homePage.enterSearchText("flower");
+        searchPage = homePage.clickSearch();
+        assertTrue(searchPage.getHeader().contains("Flowers"));
     }
+
+   
 }
