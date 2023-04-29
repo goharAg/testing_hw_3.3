@@ -29,8 +29,8 @@ public class BaseTest {
 //        driver = new ChromeDriver();
 
         ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.setCapability("browserVersion", "74");
-        chromeOptions.setCapability("platformName", "Windows 10");
+        chromeOptions.setCapability("browserVersion", "112.0");
+        chromeOptions.setCapability("platformName", "Linux");
         driver = new RemoteWebDriver(new URL(" http://localhost:4444/"), chromeOptions);
     }
 

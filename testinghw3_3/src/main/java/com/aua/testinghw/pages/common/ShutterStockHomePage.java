@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.Keys;
 
 import java.time.Duration;
 
@@ -31,7 +32,8 @@ public class ShutterStockHomePage extends BasePage {
         WebElement searchButton = new WebDriverWait(driver, Duration.ofSeconds(5))
                 .until(ExpectedConditions.elementToBeClickable(searchButtonXpath));
 
-        searchButton.click();
+//        searchButton.click();
+        searchButton.sendKeys(Keys.RETURN);
         return new ShutterStockSearchPage(driver);
     }
     
