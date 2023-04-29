@@ -10,13 +10,14 @@ import org.openqa.selenium.Keys;
 
 import java.time.Duration;
 
-import static main.java.com.aua.testinghw.constants.locators.ShutterStockHomePageConstants.*;
+import static com.aua.testinghw.constants.locators.ShutterStockHomePageConstants.SEARCH_BAR;
+import static com.aua.testinghw.constants.locators.ShutterStockHomePageConstants.SEARCH_BUTTON;
 
 public class ShutterStockHomePage extends BasePage {
     
     WebDriver driver;
-    private By searchButtonXpath = By.xpath(SEARCH_BUTTON);
-    private By searchBarXPath = By.xpath(SEARCH_BAR);
+    private By searchButtonClass = By.className(SEARCH_BUTTON);
+    private By searchBarClass = By.className(SEARCH_BAR);
 
     public ShutterStockHomePage(WebDriver driver) {
         super(driver);
@@ -24,16 +25,16 @@ public class ShutterStockHomePage extends BasePage {
 	}
 
     public void enterSearchText(String text){
-        getElement(searchBarXPath).sendKeys(text);
+        getElement(searchBarClass).sendKeys(text);
     }
 
     public ShutterStockSearchPage clickSearch() {
 
         WebElement searchButton = new WebDriverWait(driver, Duration.ofSeconds(5))
-                .until(ExpectedConditions.elementToBeClickable(searchButtonXpath));
+                .until(ExpectedConditions.elementToBeClickable(searchButtonClass));
 
 //        searchButton.click();
-        searchButton.sendKeys(Keys.RETURN);
+        searchButton.sendKeys(Keys.ENTER);
         return new ShutterStockSearchPage(driver);
     }
     
