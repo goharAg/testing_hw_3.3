@@ -3,6 +3,7 @@ package com.aua.testinghw.base;
 import com.aua.testinghw.pages.common.ShutterStockHomePage;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
@@ -28,7 +29,9 @@ public class BaseTest {
 //        driver = new ChromeDriver();
 
         ChromeOptions chromeOptions = new ChromeOptions();
-        driver = new RemoteWebDriver(new URL(" http://localhost:4444"), chromeOptions);
+        chromeOptions.setCapability("browserVersion", "74");
+        chromeOptions.setCapability("platformName", "Windows 10");
+        driver = new RemoteWebDriver(new URL(" http://localhost:4444/"), chromeOptions);
     }
 
     @BeforeMethod

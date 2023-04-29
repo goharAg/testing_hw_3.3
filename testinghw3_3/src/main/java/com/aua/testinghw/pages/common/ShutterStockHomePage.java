@@ -3,6 +3,11 @@ package com.aua.testinghw.pages.common;
 import com.aua.testinghw.pages.base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 import static main.java.com.aua.testinghw.constants.locators.ShutterStockHomePageConstants.*;
 
@@ -22,7 +27,11 @@ public class ShutterStockHomePage extends BasePage {
     }
 
     public ShutterStockSearchPage clickSearch() {
-        getElement(searchButtonXpath).click();
+
+        WebElement searchButton = new WebDriverWait(driver, Duration.ofSeconds(5))
+                .until(ExpectedConditions.elementToBeClickable(searchButtonXpath));
+
+        searchButton.click();
         return new ShutterStockSearchPage(driver);
     }
     
