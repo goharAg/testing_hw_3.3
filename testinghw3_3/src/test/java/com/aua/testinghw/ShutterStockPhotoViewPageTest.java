@@ -17,6 +17,7 @@ public class ShutterStockPhotoViewPageTest extends BaseTest {
         homePage.enterSearchText("flower");
         searchPage = homePage.clickSearch();
         photoViewPage = searchPage.getPhoto();
+        // TO be continued ... :)
     }
 
 }
