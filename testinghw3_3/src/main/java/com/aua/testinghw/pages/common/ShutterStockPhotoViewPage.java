@@ -1,6 +1,6 @@
-package com.aua.testinghw.pages;
+package com.aua.testinghw.pages.common;
 
-import main.java.com.aua.testinghw.pages.common.BasePage;
+import com.aua.testinghw.pages.base.BasePage;
 import org.openqa.selenium.WebDriver;
 
 public class ShutterStockPhotoViewPage extends BasePage {
@@ -8,6 +8,7 @@ public class ShutterStockPhotoViewPage extends BasePage {
     WebDriver driver;
 
     public ShutterStockPhotoViewPage(WebDriver driver) {
+        super(driver);
         this.driver = driver;
     }
 }

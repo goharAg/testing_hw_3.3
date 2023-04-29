@@ -1,6 +1,6 @@
-package com.aua.testinghw.pages;
+package com.aua.testinghw.pages.common;
 
-import main.java.com.aua.testinghw.pages.common.BasePage;
+import com.aua.testinghw.pages.base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import static main.java.com.aua.testinghw.constants.locators.ShutterStockSearchPageLoactors.FIRST_IMAGE_DIV;
@@ -13,7 +13,8 @@ public class ShutterStockSearchPage extends BasePage {
     private By firstElementXpath = By.xpath(FIRST_IMAGE_DIV);
 
     public ShutterStockSearchPage(WebDriver driver) {
-		this.driver=driver;
+        super(driver);
+        this.driver=driver;
 	}
 
     public String getHeader(){
