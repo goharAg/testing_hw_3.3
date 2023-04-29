@@ -1,16 +1,10 @@
 package com.aua.testinghw;
 
-import org.junit.jupiter.api.AfterAll;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;  
-import org.testng.annotations.Test;
+import com.aua.testinghw.base.BaseTest;
+import com.aua.testinghw.pages.ShutterStockSearchPage;
+import org.junit.Test;
 
-import main.java.com.aua.testinghw.pages.ShutterStockSearchPage;  
-
-
+import static org.testng.AssertJUnit.assertTrue;
 
 public class ShutterStockSearchPageTest extends BaseTest
 {
@@ -23,5 +17,4 @@ public class ShutterStockSearchPageTest extends BaseTest
         assertTrue(searchPage.getHeader().contains("Flowers"));
     }
 
-   
 }

@@ -1,6 +1,11 @@
-package test.java.com.aua.testinghw.base;
+package com.aua.testinghw.base;
 
-import main.java.com.aua.testinghw.pages.*;;
+import com.aua.testinghw.pages.ShutterStockHomePage;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 
 public class BaseTest {
     public static WebDriver driver;
@@ -18,7 +23,6 @@ public class BaseTest {
     @BeforeMethod
     public static void goHome(){
         driver.manage().window().maximize();
-
         homePage = new ShutterStockHomePage(driver);
         driver.get(baseUrl);
     }

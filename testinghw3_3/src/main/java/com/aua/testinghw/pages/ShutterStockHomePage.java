@@ -1,11 +1,14 @@
-import main.java.com.aua.testinghw.pages.ShutterStockSearchPage;
-import main.java.com.aua.testinghw.constants.locators.*;
+package com.aua.testinghw.pages;
+
 import main.java.com.aua.testinghw.pages.common.BasePage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
+import static main.java.com.aua.testinghw.constants.locators.ShutterStockHomePageConstants.*;
 
 public class ShutterStockHomePage extends BasePage {
     
-    WebDriver webDriver;
+    WebDriver driver;
     private By xpath = By.xpath(HOME_BUTTON);
     private By searchButtonXpath = By.xpath(SEARCH_BUTTON);
     private By searchBarXPath = By.xpath(SEARCH_BAR);
@@ -20,12 +23,12 @@ public class ShutterStockHomePage extends BasePage {
     }
 
     public void enterSearchText(String text){
-        driver.findElement(searchBarXPath).sendKey(text);
+        driver.findElement(searchBarXPath).sendKeys(text);
     }
 
     public ShutterStockSearchPage clickSearch() {
         driver.findElement(searchButtonXpath).click();
-        return new ShutterStockSearchPage(dirver);
+        return new ShutterStockSearchPage(driver);
     }
     
 

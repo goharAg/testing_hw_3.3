@@ -5,10 +5,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.aua.testinghw</groupId>
-  <artifactId>testinghw3_1</artifactId>
+  <artifactId>testinghw3_3</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-  <name>testinghw3_1</name>
+  <name>testinghw3_3</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -42,6 +42,12 @@
       <groupId>org.seleniumhq.selenium</groupId>
       <artifactId>selenium-java</artifactId>
       <version>4.8.3</version>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.13.1</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 
