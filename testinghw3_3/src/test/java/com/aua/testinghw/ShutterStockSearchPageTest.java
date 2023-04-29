@@ -13,10 +13,9 @@ public class ShutterStockSearchPageTest extends BaseTest
 
     @Test
     public void searchTextTest(){
-
-        System.out.println("HERE");
         homePage.enterSearchText("flower");
         searchPage = homePage.clickSearch();
+        System.out.println(searchPage.getHeader());
         assertTrue(searchPage.getHeader().contains("Flowers"));
     }
 

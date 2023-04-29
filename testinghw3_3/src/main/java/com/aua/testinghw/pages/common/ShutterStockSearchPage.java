@@ -18,11 +18,11 @@ public class ShutterStockSearchPage extends BasePage {
 	}
 
     public String getHeader(){
-       return  driver.findElement(tagNameHeader).getTagName();
+       return  getElement(tagNameHeader).getAccessibleName();
     }
 
     public ShutterStockPhotoViewPage getPhoto(){
-        this.driver.findElement(firstElementXpath).click();
+        getElement(firstElementXpath).click();
         return new ShutterStockPhotoViewPage(driver);
 
     }

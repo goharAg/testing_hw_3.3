@@ -1,11 +1,19 @@
 package com.aua.testinghw.base;
 
 import com.aua.testinghw.pages.common.ShutterStockHomePage;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+
+import org.openqa.selenium.OutputType;
 
 import static com.aua.testinghw.constants.urls.SUTurl.baseUrl;
 
@@ -26,6 +34,18 @@ public class BaseTest {
         homePage = new ShutterStockHomePage(driver);
         driver.get(baseUrl);
     }
+
+    @AfterMethod
+    public void recordFailure(ITestResult result){
+        TakesScreenshot camera = (TakesScreenshot) driver;
+        File screenshot = camera.getScreenshotAs(OutputType.FILE);
+        try{
+            Files.move(screenshot.toPath(), new File("src/test/screenshots/" +  result.getName() + ".jpg").toPath());
+        }catch(IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     @AfterClass
     public void tearDown(){
